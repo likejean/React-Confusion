@@ -7,18 +7,19 @@ class Menu extends Component {
     constructor(props){ 
         super(props);
         this.state = {
-            selectedDish: null
+            selectedDish: null,
+            on: false
         };         
     }
-    
+
     onDishSelect(dish){
         this.setState({selectedDish: dish})
         setTimeout(() => {
             this.setState({selectedDish: null})
         }, 15000);                
     }
-    renderDish(dish){
-        
+    
+    renderDish(dish){        
         if (dish != null){
             return (
                 <Card>
