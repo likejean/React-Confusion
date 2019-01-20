@@ -24,15 +24,15 @@ class DishDetail extends Component {
                     <h4>Comments</h4>
                     <ul className="list-unstyled"> 
                         {comments.map(item => {
-                            return (
+                            return (                               
                                 <div key={item.id}>
-                                    <li>--{item.author} {item.date}</li>                                    
+                                    <li>--{item.author} {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(item.date)))}</li>                                    
                                     <li style={{
                                         marginBottom : '25px', 
                                         fontWeight: 'bold',
                                         fontStyle: 'italic'
                                     }}>"{item.comment}"</li>
-                                </div>                               
+                                </div>                                                  
                             );
                         })}
                     </ul>
@@ -45,11 +45,13 @@ class DishDetail extends Component {
         }
     }
     render(){        
-        if (this.props.data != null){            
+        if (this.props.dish != null){            
             return (
-                <div className='row'>
-                    {this.renderDish(this.props.data)}
-                    {this.renderComments(this.props.data.comments)}
+                <div className='container'>
+                    <div className='row'>
+                        {this.renderDish(this.props.dish)}
+                        {this.renderComments(this.props.dish.comments)}
+                    </div>
                 </div>
             );
         }else{  
