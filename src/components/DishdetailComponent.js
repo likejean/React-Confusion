@@ -16,7 +16,7 @@ function RenderDish ({dish}){
 }
 
 function RenderComments({comments}) {
-    console.log(comments);
+    
     if(comments != null){
         return (
             <div className="col-sm-12 col-md-5 m-1">
