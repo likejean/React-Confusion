@@ -8,8 +8,7 @@ function RenderDish ({dish}){
             <Card>                       
                 <CardImg width='100%' src={dish.image} alt={dish.name} />                    
                 <CardTitle style={{margin : '15px'}}>{dish.name}</CardTitle>
-                <CardText style={{margin : '15px'}}>{dish.description}</CardText>                            
-                
+                <CardText style={{margin : '15px'}}>{dish.description}</CardText>
             </Card>
         </div>
     )
@@ -45,6 +44,7 @@ function RenderComments({comments}) {
 }
     
 const DishDetail = (props) => {
+
     if (props.dish != null){            
         return (
             <div className='container'>
