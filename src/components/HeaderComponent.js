@@ -28,7 +28,7 @@ class Header extends Component {
     handleLogin(event){
         this.toggleModal();
         alert("Username: " + this.username.value + "Password: "  
-        + this.username.value + "Remember: " + this.remember.checked);
+        + this.username.password + "Remember: " + this.remember.checked);
         event.preventDefault();
     }
 
@@ -39,7 +39,7 @@ class Header extends Component {
                     <div className="container">
                         <NavbarToggler onClick={this.toggleNav} />
                         <NavbarBrand className="mr-auto" href="/">
-                            <img src='assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand>
+                            <img src='./assets/images/logo.png' height="30" width="41" alt='Ristorante Con Fusion' /></NavbarBrand>
                         <Collapse isOpen={this.state.isNavOpen} navbar>
                             <Nav navbar>
                                 <NavItem>
