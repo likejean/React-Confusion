@@ -35,8 +35,8 @@ function RenderComments({comments, postComment, dishId}) {
                     <Stagger in>
                         {comments.map(item => {
                             return ( 
-                                <Fade in>                              
-                                    <div key={item.id}>
+                                <Fade in key={item.id}>                              
+                                    <div>
                                         <li>--{item.author} {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(item.date)))}</li>                                    
                                         <li style={{
                                             marginBottom : '25px', 
