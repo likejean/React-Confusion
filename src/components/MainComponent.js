@@ -11,7 +11,8 @@ import { connect } from 'react-redux';
 import { addComment, fetchDishes, fetchComments, fetchPromos } from '../redux/ActionCreators';
 import { actions } from 'react-redux-form';
 
-const mapStateToProps = state => {    
+const mapStateToProps = state => {
+    
     return {
         dishes: state.dishes,
         comments: state.comments,
@@ -27,6 +28,7 @@ const mapDispatchToProps = dispatch => ({
     fetchComments: () => dispatch(fetchComments()),
     fetchPromos: () => dispatch(fetchPromos())
 });
+  
 
 class Main extends Component {
 
@@ -36,7 +38,7 @@ class Main extends Component {
         this.props.fetchPromos();
     }
     render() {
-        const HomePage = () => {
+        const HomePage = () => { 
             return (
             <Home 
                 
@@ -53,8 +55,7 @@ class Main extends Component {
         }
 
         const DishWithId = ({match}) => {
-            console.log(this.props.dishes)
-            console.log(this.props.comments)
+           
             return(
                 <DishDetail dish={this.props.dishes.dishes.filter((dish) => dish.id === parseInt(match.params.dishId,10))[0]}
                 isLoading={this.props.dishes.isLoading}
