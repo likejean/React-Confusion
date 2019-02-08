@@ -24,7 +24,7 @@ export const postFeedback = (firstname, lastname, telnum, email, agree, contactT
         credentials: "same-origin"
     })
     .then(response => {
-        if (response.ok) {
+        if (response.ok) {           
             return response;
         }else {
             var error = new Error('Error ' + response.status + ': ' + response.statusText);
@@ -35,6 +35,8 @@ export const postFeedback = (firstname, lastname, telnum, email, agree, contactT
     error => {
         throw error;
     })
+    .then(response => response.json())
+    .then(feedback => alert(JSON.stringify(feedback)))
     .catch(error =>  { console.log('post comments', error.message);
         alert('Your feedback could not be posted\nError: ' + error.message); 
     });

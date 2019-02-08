@@ -35,15 +35,13 @@ function RenderComments({comments, postComment, dishId}) {
                     <Stagger in>
                         {comments.map(item => {
                             return ( 
-                                <Fade in key={item.id}>                              
-                                    <div>
-                                        <li>--{item.author} {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(item.date)))}</li>                                    
-                                        <li style={{
-                                            marginBottom : '25px', 
-                                            fontWeight: 'bold',
-                                            fontStyle: 'italic'
-                                        }}>"{item.comment}"</li>                                
-                                    </div> 
+                                <Fade in key={item.id}>
+                                    <li>--{item.author} {new Intl.DateTimeFormat('en-US', { year: 'numeric', month: 'short', day: '2-digit'}).format(new Date(Date.parse(item.date)))}</li>                                    
+                                    <li style={{
+                                        marginBottom : '25px', 
+                                        fontWeight: 'bold',
+                                        fontStyle: 'italic'
+                                    }}>"{item.comment}"</li>
                                 </Fade>                                                 
                             );
                         })}
