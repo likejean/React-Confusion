@@ -25,7 +25,7 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => ({
     postComment: (dishId, rating, author, comment) => dispatch(postComment(dishId, rating, author, comment)),
-    postFeedback: (firstname, lastname, telnum, email, agree, contactType, feedback) => dispatch(postFeedback(firstname, lastname, telnum, email, agree, contactType, feedback)),
+    postFeedback: (feedback) => dispatch(postFeedback(feedback)),
     fetchDishes: () => { dispatch(fetchDishes())},
     resetFeedbackForm: () => { dispatch(actions.reset('feedback'))},
     fetchComments: () => dispatch(fetchComments()),

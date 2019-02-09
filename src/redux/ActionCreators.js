@@ -4,15 +4,15 @@ import { baseUrl } from '../shared/baseUrl';
 
 
 //ADD & POST FEEDBACK
-export const postFeedback = (firstname, lastname, telnum, email, agree, contactType, feedback) => () => {
+export const postFeedback = ({firstname, lastname, telnum, email, agree, contactType, comment}) => () => {
     const newFeedback = {
-        firstname: firstname,
-        lastname: lastname,
-        telnum: telnum,
-        email: email,
-        agree: agree,
-        contactType: contactType,        
-        feedback: feedback
+        firstname,
+        lastname,
+        telnum,
+        email,
+        agree,
+        contactType,        
+        comment
     };   
     
     return fetch(baseUrl + 'feedback', {
